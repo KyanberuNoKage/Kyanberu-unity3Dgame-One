@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform groundCheck;
 
     [Header("isGrounded Settings:")]
-    public float groundDistance = 0.2f;
+    public float groundDistance = 1F;
     public LayerMask groundMask;
     private bool isGrounded;
 
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
         Velocity.y += gravity * Time.deltaTime;
 
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Velocity.y = Mathf.Sqrt(JumpHight * -2 * gravity);
         }
