@@ -4,6 +4,7 @@ The first 3D game ive made in years, hope it goes well...
 -----------------------------------------------------------------------------------------------------------------
 
 10/10/2020:
+Created:
 - Created First Room/Map
 - Created Materials For Map
 - Created Player
@@ -12,6 +13,7 @@ The first 3D game ive made in years, hope it goes well...
 -----------------------------------------------------------------------------------------------------------------
 
 11/10/2020:
+Created:
 - Created The First Gun Object.
 - Created Bullet Prefab.
 - Created First Gun Script (instantiating bullets, ammo count, reload etc.)
@@ -29,7 +31,7 @@ Created:
 - Particle System Prefab Obj For The Bullets Collision/Impact.
 - DestroyOverTime Script Created (destroys the object its attacked to after given amount of time)
 
-Edits:
+Edited:
 - Edited The Bullet Script To Instanciate The Bullet Hit Prefab Object With A Rotation That Is Perpendicular To The Object It Has Collided With.
 
 -----------------------------------------------------------------------------------------------------------------
