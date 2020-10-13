@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gunOneScript : MonoBehaviour
+public class GunTwoScript : MonoBehaviour
 {
     private Transform playersCamera;
     private GameObject thisGun;
@@ -25,7 +25,7 @@ public class gunOneScript : MonoBehaviour
     public Vector3 reloadPosition;
 
     //The intervel between firing bullets.
-    public float fireInterval = 0.5f;
+    public float fireInterval = 0.1f;
     private bool fireIntervalTimerOn = false;
     private float fireIntervalTimer = 0;
 
@@ -33,8 +33,8 @@ public class gunOneScript : MonoBehaviour
     {
         #region Reload Variables
         original_tilt = gameObject.transform.localRotation;
-        reload_tilt = Quaternion.Euler(35, -10, 0);
-        reloadPosition = transform.localPosition + new Vector3(0, -0.5f, 0);
+        reload_tilt = Quaternion.Euler(-45, -45, 0);
+        reloadPosition = transform.localPosition + new Vector3(-0.1f, 0.3f, 0);
         #endregion
 
         #region GameObject Variables
@@ -57,7 +57,7 @@ public class gunOneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Var For Temp Ammo Count Display.//
+        //Var For Temp Ammo Count Display.
         int tempAmmoCount = AmmoCount;
 
         //Method To Fire A Bullet From The Gun.
@@ -75,19 +75,19 @@ public class gunOneScript : MonoBehaviour
         //Method For Reload Timer.
         reloadTimer();
 
-        //Temp Ammo Count Display.//
-        if (tempAmmoCount != AmmoCount) 
+        //Temp Ammo Count Display.
+        if (tempAmmoCount != AmmoCount)
         {
             tempAmmoCount = AmmoCount;
             Debug.Log("Ammo Count: " + AmmoCount);
         }
-        
+
     }
 
     #region Methods
     void FireGun()
     {
-        if (Input.GetButtonUp("Fire1") && canFire && AmmoCount > 0)
+        if (Input.GetButton("Fire1") && canFire && AmmoCount > 0)
         {
             canFire = false;
             fireIntervalTimer = 0;

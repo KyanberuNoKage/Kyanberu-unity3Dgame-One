@@ -5,15 +5,25 @@ using UnityEngine;
 public class bulletMoveAndDestroySelf : MonoBehaviour
 {
     private float timer = 0;
-    public float bulletSpeed = 1;
+    public float bulletSpeed = 200;
     private Rigidbody myRB;
     public GameObject bulletHitSystem;
+    public LayerMask playermask;
+    public float bulletRayDistance = 1f;
+    public float offset = 1;
 
-    void FixedUpdate()
+    private RaycastHit hitInfo;
+
+    void Update()
     {
         DestroyTimer();
 
         MoveBullet();
+    }
+
+    private void FixedUpdate()
+    {
+        BulletRay();
     }
 
     void MoveBullet()
@@ -34,17 +44,23 @@ public class bulletMoveAndDestroySelf : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void BulletRay()
     {
-        if (other.gameObject.name != "1stPersonPlayer" /*&& other.gameObject.tag != "enemy"*/)
+        //Local Forwards Position Increaced By An Offset Of 0.7.
+        Debug.DrawRay(transform.localPosition + transform.forward * 0.7f, transform.forward * bulletRayDistance, Color.red);
+
+        if (Physics.Raycast(transform.localPosition + transform.forward * 0.7f, transform.forward, out hitInfo, bulletRayDistance))
         {
-            //Destination - Oragin.
-            Vector3 perpendicularToOther = other.gameObject.transform.position - gameObject.transform.position;
-            Quaternion perpendicularRotation = Quaternion.LookRotation(perpendicularToOther, Vector3.up);
+            if (hitInfo.collider.gameObject.tag != "1stPersonPlayer" /*&& other.gameObject.tag != "enemy"*/)
+            {
+                //Point to face towards - Oragin of rotation = Direction Vector.//
+                Vector3 perpendicularToOther = gameObject.transform.position - hitInfo.point;
+                Quaternion perpendicularRotation = Quaternion.LookRotation(perpendicularToOther, Vector3.up);
 
-            Instantiate(bulletHitSystem, gameObject.transform.position, perpendicularRotation);
+                Instantiate(bulletHitSystem, gameObject.transform.position, perpendicularRotation);
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

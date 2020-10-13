@@ -1969,7 +1969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &150630229
 Transform:
   m_ObjectHideFlags: 0
@@ -1979,7 +1979,7 @@ Transform:
   m_GameObject: {fileID: 150630228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: -0.6, z: 1.89}
-  m_LocalScale: {x: 0.2, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.3, z: 1.82}
   m_Children:
   - {fileID: 1060193972}
   - {fileID: 216363574}
@@ -1995,13 +1995,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 150630228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c765e96ed61bbe4e96c3f996d523975, type: 3}
+  m_Script: {fileID: 11500000, guid: 898655801476e0c48bb4d165e2792507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5116634699033436304, guid: 2853422772e7ad64cb75e7ace59edccf, type: 3}
-  AmmoCount: 12
-  ReloadSpeed: 3
-  fireInterval: 0.05
+  bulletPrefab: {fileID: 3463007041460964159, guid: 682b0df47fa5de04f9c298ded59f08bf, type: 3}
+  AmmoCount: 24
+  ReloadSpeed: 2
+  reloadPosition: {x: 0, y: 0, z: 0}
+  fireInterval: 0.1
 --- !u!23 &150630231
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2075,7 +2076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216363573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.61}
+  m_LocalPosition: {x: 0, y: 0, z: 0.565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 150630229}
@@ -2494,7 +2495,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15274
+  m_Name: pb_Mesh15294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2718,7 +2719,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15192
+  m_Name: pb_Mesh15210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3001,7 +3002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813126382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -98.08, y: 6.92, z: 0}
+  m_LocalPosition: {x: 0, y: 6.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -4850,6 +4851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386457288}
+  - component: {fileID: 1386457289}
   m_Layer: 0
   m_Name: GunHolsterObject
   m_TagString: Untagged
@@ -4873,13 +4875,29 @@ Transform:
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1386457289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386457287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c65fc8c286083418a04471426b8815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunsInHolster:
+  - {fileID: 2098023964}
+  - {fileID: 150630228}
+  ActiveGun: 0
 --- !u!43 &1606374398
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15178
+  m_Name: pb_Mesh15182
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15819,6 +15837,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5116634699033436304, guid: 2853422772e7ad64cb75e7ace59edccf, type: 3}
   AmmoCount: 6
   ReloadSpeed: 2
+  reloadPosition: {x: 0, y: -0.5, z: 0}
   fireInterval: 0.3
 --- !u!43 &2147004497
 Mesh:
@@ -15826,7 +15845,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15246
+  m_Name: pb_Mesh15268
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
