@@ -21,7 +21,7 @@ The first 3D game ive made in years, hope it goes well...
 
 12/10/2020:
 Fixed:
-- Fixed The Bullets Not Colliding With Objects.
+- Fixed The Bullets Not Colliding With Objects (Mostly).
 - Fixed Bullets Being Destroyed On Collision With Objects.
 
 Created:
@@ -33,3 +33,21 @@ Edits:
 - Edited The Bullet Script To Instanciate The Bullet Hit Prefab Object With A Rotation That Is Perpendicular To The Object It Has Collided With.
 
 -----------------------------------------------------------------------------------------------------------------
+
+13/10/2020:
+Fixed:
+- Removed The Collision System That Handles Bullet Collisions And Replaced It With A New System (see below in "Edited" section)
+
+Created:
+- New Gun Object, GunTwo-AutoRifle (dupe of the first gun object)
+- New Script For Automatic Guns (player can hold mouse button to auto fire)
+- Holster Scroll Function Script (the ScrollWheelScript changes which child gun object of the GunHolster object is active using a list of GameObjects)
+- New Bullet Prefab & Bullet Material (dupe of first bullet prefab with diffrent material, this is the prefab used in the new gun object)
+
+Edited:
+- Changed The System That Detects Bullet Impact. (switched from detecting collider collisions to using a ray on the bullet)
+- GunOneScript (added a rotation and local position change on reaload which will be a visual replacement of the reload Debug.Log)
+- Organised Some Scripts And Asset Folders.
+
+-----------------------------------------------------------------------------------------------------------------
+
