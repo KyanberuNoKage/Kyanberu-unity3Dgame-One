@@ -1,0 +1,29 @@
+#include "game"
+
+<Start class="main" link="JSON">
+
+GetComponentGame("please"); => [01001001010001011] => cach
+
+argc DEFB "argumens\n",0
+argv DEFB "PLS work",0
+
+     ALIGN
+
+.argv{
+  colour = red;
+  memory= 1000101;
+  return home;
+}
+
+CSS class start(){
+  GetDocument.GetClass("Game").style = "cool";
+  bool false = false;
+  bool true = GetBool(false).
+
+}
+
+public SQL GetBool(bool bool) : bool{
+  return !(bool);
+}
+
+<Start>
