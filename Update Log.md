@@ -53,3 +53,13 @@ Edited:
 
 -----------------------------------------------------------------------------------------------------------------
 
+14/10/2020:
+Created:
+- Bullet Models In Blender (saved the blender files in the project for better workflow)
+- Created Two Prefabs Of The Bullet Model With Two Seperate Textures (bullet red and bullet purple)
+
+Edited:
+- Moved Blender Models From GitHub Repo File To Blender Model File In Projects Asset Folder (for better workflow)
+- Removed The Gun Model/Materials/Textures Due To Bugy Materials In Unity (will be remade and used at a later date)
+
+-----------------------------------------------------------------------------------------------------------------

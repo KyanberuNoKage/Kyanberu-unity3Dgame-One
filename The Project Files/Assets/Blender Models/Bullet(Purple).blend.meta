@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 2f5e0dc540f374d48855f649d42291e6
+guid: a6dd6f5fc23d82b42811dd2523bdab8b
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulletMat
+    second: {fileID: 2100000, guid: d29b7cc976245104e8252ce1112a4fe9, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
