@@ -28,7 +28,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdd8388db1cbbb498b52069baf90b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 200
+  bulletSpeed: 50
   bulletHitSystem: {fileID: 2627314886945430480, guid: f8519509e31880b4b971c05e8425d187, type: 3}
   playermask:
     serializedVersion: 2

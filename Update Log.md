@@ -63,3 +63,12 @@ Edited:
 - Removed The Gun Model/Materials/Textures Due To Bugy Materials In Unity (will be remade and used at a later date)
 
 -----------------------------------------------------------------------------------------------------------------
+
+15/10/2020:
+Fixed:
+- Fixed Issue With Indavidual Guns Not Having There Own Script Values Due To Them Using The Same Script With Public Variables (created prefabs and made some of the code public)
+
+Created:
+- The Model For The First Modeled Gun And The Textures For It (the model was created in blender and the texture was used to create an unlit texture material)
+
+-----------------------------------------------------------------------------------------------------------------

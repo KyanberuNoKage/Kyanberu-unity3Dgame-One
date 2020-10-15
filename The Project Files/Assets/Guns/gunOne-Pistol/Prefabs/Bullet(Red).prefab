@@ -69,11 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4adab8a8d60b8034899f884a0875773e, type: 2}
     - target: {fileID: 5181807291844091101, guid: a240dafa6b911214a99cedb89d11bf2b, type: 3}
       propertyPath: bulletSpeed
-      value: 200
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5181807291844091101, guid: a240dafa6b911214a99cedb89d11bf2b, type: 3}
       propertyPath: bulletHitSystem
       value: 
-      objectReference: {fileID: 1289828370525915731, guid: 191fabe3ae112e84ca866657c4456282, type: 3}
+      objectReference: {fileID: 421753289211500085, guid: 8590a64ac094eb94ca739bcf7bd68ed3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a240dafa6b911214a99cedb89d11bf2b, type: 3}

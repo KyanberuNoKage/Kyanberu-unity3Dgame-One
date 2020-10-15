@@ -16,13 +16,15 @@ public class bulletMoveAndDestroySelf : MonoBehaviour
 
     void Update()
     {
-        DestroyTimer();
-
-        MoveBullet();
+        
     }
 
     private void FixedUpdate()
     {
+        DestroyTimer();
+
+        MoveBullet();
+
         BulletRay();
     }
 

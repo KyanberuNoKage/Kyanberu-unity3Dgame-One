@@ -20,21 +20,26 @@ public class gunOneScript : MonoBehaviour
     private bool isReloading = false;
     private float reloadTimerFloat = 0;
     public float ReloadSpeed = 2;
+    public float rotateX = 0;
+    public float rotateY = 0;
+    public float rotateZ = 0;
     private Quaternion reload_tilt;
     private Quaternion original_tilt;
-    public Vector3 reloadPosition;
 
     //The intervel between firing bullets.
     public float fireInterval = 0.5f;
     private bool fireIntervalTimerOn = false;
     private float fireIntervalTimer = 0;
 
+    public Vector3 reloadPosition;
+    private Vector3 reloadPositionVector;
+
     private void Start()
     {
         #region Reload Variables
         original_tilt = gameObject.transform.localRotation;
-        reload_tilt = Quaternion.Euler(35, -10, 0);
-        reloadPosition = transform.localPosition + new Vector3(0, -0.5f, 0);
+        reload_tilt = Quaternion.Euler(rotateX, rotateY, rotateZ);
+        reloadPositionVector = transform.localPosition + reloadPosition;
         #endregion
 
         #region GameObject Variables
@@ -44,8 +49,8 @@ public class gunOneScript : MonoBehaviour
         #endregion
 
         #region Hip Fire And Ireonsights Variables
-        hipFirePosition = new Vector3(0.8f, -0.6f, 1.89f);
-        ironsightFirePosition = new Vector3(0, -0.3f, 1.41f);
+        hipFirePosition = transform.localPosition;
+        ironsightFirePosition = reloadPositionVector;
         #endregion
 
         #region Ammo Count
@@ -144,7 +149,7 @@ public class gunOneScript : MonoBehaviour
             reloadTimerFloat += Time.deltaTime;
 
             transform.localRotation = reload_tilt;
-            transform.localPosition = reloadPosition;
+            transform.localPosition = reloadPositionVector;
         }
         else
         {
