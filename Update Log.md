@@ -72,3 +72,13 @@ Created:
 - The Model For The First Modeled Gun And The Textures For It (the model was created in blender and the texture was used to create an unlit texture material)
 
 -----------------------------------------------------------------------------------------------------------------
+
+16/10/2020:
+Created:
+- New Bullet Prefab (varient of red bullet with a diffrent particle system)
+- New Particle System For The New Bullet Prefab (uses diffrent material for its particles, diffrent particle movement/effect)
+
+Edited:
+- Changed "OnButtonUp()" To "OnButtonDown()" For The "Fire()" Method.
+
+-----------------------------------------------------------------------------------------------------------------

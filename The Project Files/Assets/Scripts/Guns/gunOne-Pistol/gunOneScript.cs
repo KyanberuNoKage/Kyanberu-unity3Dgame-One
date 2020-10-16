@@ -92,7 +92,7 @@ public class gunOneScript : MonoBehaviour
     #region Methods
     void FireGun()
     {
-        if (Input.GetButtonUp("Fire1") && canFire && AmmoCount > 0)
+        if (Input.GetButtonDown("Fire1") && canFire && AmmoCount > 0)
         {
             canFire = false;
             fireIntervalTimer = 0;

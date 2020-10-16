@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c765e96ed61bbe4e96c3f996d523975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7283858722243178204, guid: 8893476cc67eced4d8268382e4ded6ea, type: 3}
+  bulletPrefab: {fileID: 4226095407712487739, guid: 534cd001cca7ab14ba2d8fb11c3a18e5, type: 3}
   AmmoCount: 8
   ReloadSpeed: 2
   rotateX: -135
@@ -2942,7 +2942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813126382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -119.74, y: 7.24, z: 0}
+  m_LocalPosition: {x: 0, y: 7.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
