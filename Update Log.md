@@ -77,6 +77,8 @@ Created:
 Created:
 - New Bullet Prefab (varient of red bullet with a diffrent particle system)
 - New Particle System For The New Bullet Prefab (uses diffrent material for its particles, diffrent particle movement/effect)
+- Prefabs For The Guns When Not Picked Up.
+- Script For Picking Up Guns Using A Tag System (when the player interacts with it the gun, the gun with the same name in the gunHolster object is found and is set to "picked up")
 
 Edited:
 - Changed "OnButtonUp()" To "OnButtonDown()" For The "Fire()" Method.

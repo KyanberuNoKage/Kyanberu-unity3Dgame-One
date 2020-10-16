@@ -9,6 +9,7 @@ public class PlayerGunSwap : MonoBehaviour
     /*-------------------------*/
 
     public int ActiveGun = 0;
+    private string scrollDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,44 @@ public class PlayerGunSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gunsInHolster[ActiveGun].SetActive(true);
+        if (!gunsInHolster[ActiveGun].GetComponent<GunPickedUp>().isPickedUp)
+        {
+            gunsInHolster[ActiveGun].SetActive(false);
+
+            switch (scrollDirection)
+            {
+                case "down":
+
+                    if (ActiveGun != 0)
+                    {
+                        ActiveGun -= 1;
+                    }
+                    else
+                    {
+                        ActiveGun = gunsInHolster.Count - 1;
+                    }
+                    scrollDirection = "Not Scrolling";
+                    break;
+
+                case "up":
+
+                    if (ActiveGun != gunsInHolster.Count - 1)
+                    {
+                        ActiveGun += 1;
+                    }
+                    else
+                    {
+                        ActiveGun = 0;
+                    }
+                    scrollDirection = "Not Scrolling";
+                    break;
+            }
+        }
+        else
+        {
+            gunsInHolster[ActiveGun].SetActive(true);
+        }
+
 
         ScrollWheelDown();
 
@@ -33,6 +71,7 @@ public class PlayerGunSwap : MonoBehaviour
     {
         if (Input.mouseScrollDelta == new Vector2(0, -1))
         {
+            scrollDirection = "down";
             Debug.Log("Scrolled Down");
 
             gunsInHolster[ActiveGun].SetActive(false);
@@ -52,6 +91,7 @@ public class PlayerGunSwap : MonoBehaviour
     {
         if (Input.mouseScrollDelta == new Vector2(0, 1))
         {
+            scrollDirection = "up";
             Debug.Log("Scrolled Up");
 
             gunsInHolster[ActiveGun].SetActive(false);
