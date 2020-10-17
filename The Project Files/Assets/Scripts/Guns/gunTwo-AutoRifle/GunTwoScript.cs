@@ -15,25 +15,25 @@ public class GunTwoScript : MonoBehaviour
 
     //Vars For Ammo And Reloading.
     public int AmmoCount = 6;
-    private int maxAmmoCount;
-    private bool canFire = true;
-    private bool isReloading = false;
+    public int maxAmmoCount = 6;
+    public bool canFire = true;
+    public bool isReloading = false;
     private float reloadTimerFloat = 0;
     public float ReloadSpeed = 2;
-    private Quaternion reload_tilt;
+    public Quaternion reload_tilt;
     private Quaternion original_tilt;
     public Vector3 reloadPosition;
+    public bool useReloadPosition = true;
 
     //The intervel between firing bullets.
     public float fireInterval = 0.1f;
-    private bool fireIntervalTimerOn = false;
+    public bool fireIntervalTimerOn = false;
     private float fireIntervalTimer = 0;
 
     private void Start()
     {
         #region Reload Variables
         original_tilt = gameObject.transform.localRotation;
-        reload_tilt = Quaternion.Euler(-45, -45, 0);
         reloadPosition = transform.localPosition + new Vector3(-0.1f, 0.3f, 0);
         #endregion
 
@@ -44,7 +44,7 @@ public class GunTwoScript : MonoBehaviour
         #endregion
 
         #region Hip Fire And Ireonsights Variables
-        hipFirePosition = new Vector3(0.8f, -0.6f, 1.89f);
+        hipFirePosition = transform.localPosition;
         ironsightFirePosition = new Vector3(0, -0.3f, 1.41f);
         #endregion
 
@@ -144,7 +144,11 @@ public class GunTwoScript : MonoBehaviour
             reloadTimerFloat += Time.deltaTime;
 
             transform.localRotation = reload_tilt;
-            transform.localPosition = reloadPosition;
+
+            if (useReloadPosition)
+            {
+                transform.localPosition = reloadPosition;
+            }
         }
         else
         {

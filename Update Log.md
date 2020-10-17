@@ -84,3 +84,15 @@ Edited:
 - Changed "OnButtonUp()" To "OnButtonDown()" For The "Fire()" Method.
 
 -----------------------------------------------------------------------------------------------------------------
+
+17/10/2020:
+Fixed:
+- Model Textures
+
+Created:
+- New Gun Model ("The Shark")
+- Reload Animation For The New Gun
+- Script To Move The Ammo Mag For The New Gun While Its Being Fired.
+
+Edited:
+- PurpleBullet Size (to fit the scale of the new gun model)
