@@ -15,7 +15,7 @@ public class GunTwoScript : MonoBehaviour
 
     //Vars For Ammo And Reloading.
     public int AmmoCount = 6;
-    public int maxAmmoCount = 6;
+    public int maxAmmoCount;
     public bool canFire = true;
     public bool isReloading = false;
     private float reloadTimerFloat = 0;
@@ -35,6 +35,7 @@ public class GunTwoScript : MonoBehaviour
         #region Reload Variables
         original_tilt = gameObject.transform.localRotation;
         reloadPosition = transform.localPosition + new Vector3(-0.1f, 0.3f, 0);
+        maxAmmoCount = AmmoCount;
         #endregion
 
         #region GameObject Variables

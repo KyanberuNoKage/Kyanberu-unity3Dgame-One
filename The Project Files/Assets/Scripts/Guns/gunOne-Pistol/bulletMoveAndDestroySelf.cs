@@ -8,15 +8,21 @@ public class bulletMoveAndDestroySelf : MonoBehaviour
     public float bulletSpeed = 200;
     private Rigidbody myRB;
     public GameObject bulletHitSystem;
+    public GameObject bloodHitSystem;
     public LayerMask playermask;
     public float bulletRayDistance = 1f;
     public float offset = 1;
 
     private RaycastHit hitInfo;
 
+    void Start()
+    {
+        bloodHitSystem = GameObject.Find("bloodSystemPlaceholder").gameObject.GetComponent<ParticleSystemQuickFixScript>().bloodObject;
+    }
+
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
@@ -53,15 +59,32 @@ public class bulletMoveAndDestroySelf : MonoBehaviour
 
         if (Physics.Raycast(transform.localPosition + transform.forward * 0.7f, transform.forward, out hitInfo, bulletRayDistance))
         {
-            if (hitInfo.collider.gameObject.tag != "1stPersonPlayer" /*&& other.gameObject.tag != "enemy"*/)
+            if (hitInfo.collider.gameObject.tag != "1stPersonPlayer" && hitInfo.collider.isTrigger != true)
             {
                 //Point to face towards - Oragin of rotation = Direction Vector.//
                 Vector3 perpendicularToOther = gameObject.transform.position - hitInfo.point;
                 Quaternion perpendicularRotation = Quaternion.LookRotation(perpendicularToOther, Vector3.up);
 
-                Instantiate(bulletHitSystem, gameObject.transform.position, perpendicularRotation);
+                if (hitInfo.collider.gameObject.tag == "enemy")
+                {
+                    GameObject enemy = hitInfo.collider.gameObject;
+                    enemy.GetComponent<MobHealth>().health -= 50;
 
-                Destroy(gameObject);
+                    Instantiate(bloodHitSystem, gameObject.transform.position, perpendicularRotation);
+
+                    Debug.Log("Enemy Hit");
+
+                    Destroy(gameObject);
+                }
+                else if(hitInfo.collider.gameObject.tag != "enemy")
+                {
+                    Instantiate(bulletHitSystem, gameObject.transform.position, perpendicularRotation);
+
+                    Debug.Log("Wall Hit, u hit " + hitInfo.collider.gameObject.tag);
+
+                    Destroy(gameObject);
+                }
+
             }
         }
     }

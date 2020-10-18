@@ -64,9 +64,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   AmmoCount: 6
+  maxAmmoCount: 6
+  canFire: 1
+  isReloading: 0
   ReloadSpeed: 2
+  reload_tilt: {x: 0, y: 0, z: 0, w: 0}
   reloadPosition: {x: 0, y: 0, z: 0}
+  useReloadPosition: 1
   fireInterval: 0.1
+  fireIntervalTimerOn: 0
 --- !u!33 &1599854089209620639
 MeshFilter:
   m_ObjectHideFlags: 0

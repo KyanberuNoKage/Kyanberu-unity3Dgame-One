@@ -17,7 +17,7 @@ public class gunOneScript : MonoBehaviour
     public int AmmoCount = 6;
     private int maxAmmoCount;
     private bool canFire = true;
-    private bool isReloading = false;
+    public bool isReloading = false;
     private float reloadTimerFloat = 0;
     public float ReloadSpeed = 2;
     public float rotateX = 0;
@@ -28,7 +28,7 @@ public class gunOneScript : MonoBehaviour
 
     //The intervel between firing bullets.
     public float fireInterval = 0.5f;
-    private bool fireIntervalTimerOn = false;
+    public bool fireIntervalTimerOn = false;
     private float fireIntervalTimer = 0;
 
     public Vector3 reloadPosition;

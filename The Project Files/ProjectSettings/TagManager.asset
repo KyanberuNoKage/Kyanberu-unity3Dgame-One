@@ -8,6 +8,7 @@ TagManager:
   - GunTwo
   - GunThree
   - GunFour
+  - enemy
   layers:
   - Default
   - TransparentFX

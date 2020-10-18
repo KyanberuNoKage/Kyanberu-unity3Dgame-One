@@ -99,9 +99,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7283858722243178204, guid: 8893476cc67eced4d8268382e4ded6ea, type: 3}
   AmmoCount: 6
   ReloadSpeed: 2
-  reloadPosition: {x: 0, y: -0.3, z: 0}
+  rotateX: 0
+  rotateY: 0
+  rotateZ: 0
   fireInterval: 0.5
-  reloadPositionVector: {x: 0, y: -0.3, z: 0}
+  reloadPosition: {x: 0, y: -0.3, z: 0}
 --- !u!1 &2299618706479929269
 GameObject:
   m_ObjectHideFlags: 0

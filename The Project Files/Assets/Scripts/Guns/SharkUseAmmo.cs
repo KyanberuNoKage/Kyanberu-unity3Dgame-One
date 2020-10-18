@@ -12,6 +12,9 @@ public class SharkUseAmmo : MonoBehaviour
     private Vector3 newPos;
     private bool onlyMoveOnceBool = true;
 
+    public GameObject particleSpawnObj;
+    public GameObject gunFireParticleSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +29,10 @@ public class SharkUseAmmo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (onlyMoveOnceBool && ammoScript.fireIntervalTimerOn)
         {
             sharkAmmo.transform.localPosition -= new Vector3(stepLength, 0, 0);
-            //move the ammo mag//
-            Debug.Log("Game Object " + sharkAmmo.name + " Has Moved");
+            Instantiate( gunFireParticleSystem, particleSpawnObj.transform.position, particleSpawnObj.transform.rotation);
             onlyMoveOnceBool = false;
         }
 
@@ -46,5 +46,7 @@ public class SharkUseAmmo : MonoBehaviour
         {
             shark.GetComponent<Animator>().enabled = false;
         }
+
+        
     }
 }

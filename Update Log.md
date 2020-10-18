@@ -87,7 +87,7 @@ Edited:
 
 17/10/2020:
 Fixed:
-- Model Textures
+- Model Textures.
 
 Created:
 - New Gun Model ("The Shark")
@@ -96,3 +96,20 @@ Created:
 
 Edited:
 - PurpleBullet Size (to fit the scale of the new gun model)
+
+-----------------------------------------------------------------------------------------------------------------
+
+18/10/2020:
+Fixed:
+- Fixed The Rotation And Texture Problems With The 'Shark' Gun.
+
+Created:
+- New Model For A Mob (robot)
+- Created And Implemented New Particle System For A Muzzle Flash Effect On The Shark Gun.
+- New Particle System For The Mobs 'Blood' Splatter For When The Mob Is Killed And One For When The Mob Is Hit.
+- A Reload Particle System For The LowPollyGun Object.
+
+Edited:
+The Bullets 'MoveAndDestroySelf' Script To Implement The New 'Blood' Particle Systems.
+
+-----------------------------------------------------------------------------------------------------------------
