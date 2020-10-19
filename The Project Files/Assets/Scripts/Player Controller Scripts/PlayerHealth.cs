@@ -2,35 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MobHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public float health = 500;
     private float currentHealth;
+    public float maxHealth;
 
     public GameObject deathParticleSpawn;
     public GameObject deathParticleSystem;
 
-    public bool KillMob = false;
+    public bool KillPlayer = false;
 
 
     private void Start()
     {
         currentHealth = health;
+        maxHealth = health;
     }
 
     private void Update()
     {
         if (currentHealth != health)
         {
-            Debug.Log("Mob Damaged!");
             currentHealth = health;
         }
 
         if (currentHealth <= 0)
         {
-            Instantiate(deathParticleSystem, deathParticleSpawn.transform.position, Quaternion.Euler(0, 0, 0));
-            GameObject.Find("ValuesObj").GetComponent<GlobalValuesScript>().score += 10;
-            Destroy(gameObject);
+            //Game Over.
         }
 
         killMobFromEditor();
@@ -38,10 +37,10 @@ public class MobHealth : MonoBehaviour
 
     void killMobFromEditor()
     {
-        if (KillMob)
+        if (KillPlayer)
         {
             health -= health;
-            KillMob = false;
+            KillPlayer = false;
         }
     }
 }

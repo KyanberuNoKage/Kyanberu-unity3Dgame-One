@@ -8,8 +8,11 @@ public class mobMovementAndStates : MonoBehaviour
     private GameObject player;
     private SphereCollider sCollider;
     private Animator mobAnimator;
-    private int zero = 0;
     private Vector3 rotationMask = new Vector3(0, 1, 0);
+
+    private float timerTime = 0;
+    public GameObject bulletPrefab;
+    public GameObject bulletSpawnObject;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,7 @@ public class mobMovementAndStates : MonoBehaviour
         gameObject.AddComponent<SphereCollider>();
         sCollider = gameObject.GetComponent<SphereCollider>();
         sCollider.isTrigger = true;
-        sCollider.radius = 15;
+        sCollider.radius = 25;
         player = GameObject.Find("1stPersonPlayer").gameObject;
     }
 
@@ -33,7 +36,7 @@ public class mobMovementAndStates : MonoBehaviour
     {
         if(other.gameObject.name == "1stPersonPlayer")
         {
-            mobAnimator.SetTrigger("attackState");
+            mobAnimator.SetBool("attackBool",true);
         }
     }
 
@@ -41,7 +44,7 @@ public class mobMovementAndStates : MonoBehaviour
     {
         if (other.gameObject.name == "1stPersonPlayer")
         {
-            mobAnimator.SetTrigger("attackState");
+            mobAnimator.SetBool("attackBool", false);
         }
     }
 
@@ -51,11 +54,28 @@ public class mobMovementAndStates : MonoBehaviour
         {
             //direction = point to face towards - start position (oragin)//
             Vector3 direction = (player.transform.position - new Vector3(0, 1, 0)) - my.transform.position;
-            //my.transform.rotation = Quaternion.Euler(my.transform.eulerAngles.x, Quaternion.LookRotation(direction).y, my.transform.eulerAngles.z);
 
             Vector3 lookAtRotation = Quaternion.LookRotation(direction).eulerAngles;
             transform.rotation = Quaternion.Euler(Vector3.Scale(lookAtRotation, rotationMask));
             my.transform.Find("Arm").gameObject.transform.rotation = Quaternion.LookRotation(direction);
+
+            timer(direction);
+
+        }
+        else
+        {
+            timerTime = 0;
+        }
+    }
+
+    void timer(Vector3 direction)
+    {
+        timerTime += Time.deltaTime;
+
+        if (timerTime >= Random.Range(2, 5))
+        {
+            Instantiate(bulletPrefab, bulletSpawnObject.transform.position, Quaternion.LookRotation(player.transform.position - bulletSpawnObject.transform.position, Vector3.up));
+            timerTime = 0;
         }
     }
 }

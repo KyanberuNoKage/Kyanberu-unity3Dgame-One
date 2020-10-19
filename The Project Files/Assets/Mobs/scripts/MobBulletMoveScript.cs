@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletMoveAndDestroySelf : MonoBehaviour
+public class MobBulletMoveScript : MonoBehaviour
 {
     private float timer = 0;
     public float bulletSpeed = 200;
@@ -12,17 +12,18 @@ public class bulletMoveAndDestroySelf : MonoBehaviour
     public LayerMask playermask;
     public float bulletRayDistance = 1f;
     public float offset = 1;
+    private float randomDamage = 0;
 
     private RaycastHit hitInfo;
 
     void Start()
     {
-        bloodHitSystem = GameObject.Find("bloodSystemPlaceholder").gameObject.GetComponent<ParticleSystemQuickFixScript>().bloodObject;
+
     }
 
     void Update()
     {
-
+        randomDamage = Random.Range(0, 20) + 50;
     }
 
     private void FixedUpdate()
@@ -59,24 +60,22 @@ public class bulletMoveAndDestroySelf : MonoBehaviour
 
         if (Physics.Raycast(transform.localPosition + transform.forward * 0.7f, transform.forward, out hitInfo, bulletRayDistance))
         {
-            if (hitInfo.collider.gameObject.tag != "1stPersonPlayer" && hitInfo.collider.isTrigger != true)
+            if (hitInfo.collider.isTrigger != true)
             {
                 //Point to face towards - Oragin of rotation = Direction Vector.//
                 Vector3 perpendicularToOther = gameObject.transform.position - hitInfo.point;
                 Quaternion perpendicularRotation = Quaternion.LookRotation(perpendicularToOther, Vector3.up);
 
-                if (hitInfo.collider.gameObject.tag == "enemy")
+                if (hitInfo.collider.gameObject.name == "1stPersonPlayer")
                 {
-                    GameObject enemy = hitInfo.collider.gameObject;
-                    enemy.GetComponent<MobHealth>().health -= 50;
-
                     Instantiate(bloodHitSystem, gameObject.transform.position, perpendicularRotation);
-
-                    Destroy(gameObject);
+                    hitInfo.collider.gameObject.GetComponent<PlayerHealth>().health -= (randomDamage);
                 }
-                else if(hitInfo.collider.gameObject.tag != "enemy")
+                else if (hitInfo.collider.gameObject.name != "1stPersonPlayer")
                 {
                     Instantiate(bulletHitSystem, gameObject.transform.position, perpendicularRotation);
+
+                    Debug.Log("Wall Hit, u hit " + hitInfo.collider.gameObject.tag);
 
                     Destroy(gameObject);
                 }

@@ -113,3 +113,23 @@ Edited:
 The Bullets 'MoveAndDestroySelf' Script To Implement The New 'Blood' Particle Systems.
 
 -----------------------------------------------------------------------------------------------------------------
+
+19/10/2020:
+Fixed:
+- Minor Fixes To Scripts And Object References.
+
+Created:
+- Created Player Health System (500 health, when hit by mob's bullet the health goes down)
+- Created UI Overlay (crosshair in the middle of screen, health bar that responds to the value of "health" in the player health script)
+- Created Pause Menu (pressing "TAB" opens and closes the pause menu, can change mouse/look sensitivity with UI slider, can quit game with "ExitGameButton")
+- Created Game Over Screen (displayed when the player dies)
+- Created Texture For The Mob.
+- Created Attack AI For Mobs (while player is in range they aim their gun and fire at a randomly set interval)
+- Created Blood Particle System For Player Hit (variation of the "BloodParticleSystem", played when player is hit by a mobs bullet)
+- Created Score System (when player kills a mob the score goes up by 10, there are 10 mobs on the map therefor when the score = 100 the game ends)
+
+Edited:
+- Bullet One Prefab Script (gave it new script so that collisions with the player could be detected)
+- Changed The Initial Mouse Sensitivity In "PlayerLookAround" Script.
+
+-----------------------------------------------------------------------------------------------------------------

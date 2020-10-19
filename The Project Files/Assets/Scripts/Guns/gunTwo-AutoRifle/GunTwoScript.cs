@@ -142,6 +142,7 @@ public class GunTwoScript : MonoBehaviour
     {
         if (isReloading)
         {
+            canFire = false;
             reloadTimerFloat += Time.deltaTime;
 
             transform.localRotation = reload_tilt;

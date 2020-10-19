@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7265677078981201664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380033583512602990, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570756136569347662, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: m_Name
+      value: PlayerBloodParticleSystem(Small)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.21698111
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.r
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.g
+      value: 0.21242826
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key1.r
+      value: 0.5283019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key1.g
+      value: 0.14154501
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681256341165143134, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key1.b
+      value: 0.14154501
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5da3bfb0cc5682344b4988580534b223, type: 3}
