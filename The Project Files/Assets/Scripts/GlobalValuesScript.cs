@@ -36,6 +36,13 @@ public class GlobalValuesScript : MonoBehaviour
 
             disableScriptsRunOnce = true;
         }
+
+        if (Player.GetComponent<PlayerHealth>().health <= 0)
+        {
+            disablePlayer();
+            GameObject.Find("PlayerDieCanvas").GetComponent<Canvas>().enabled = true;
+            GameObject.Find("PlayerDieCanvas").transform.Find("EndScoreText").GetComponent<Text>().text = "You Scored: " + score;
+        }
     }
 
     void PauseMenu()

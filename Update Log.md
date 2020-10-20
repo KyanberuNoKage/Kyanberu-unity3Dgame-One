@@ -133,3 +133,12 @@ Edited:
 - Changed The Initial Mouse Sensitivity In "PlayerLookAround" Script.
 
 -----------------------------------------------------------------------------------------------------------------
+
+20/10/2020:
+Created:
+- The GAME OVER screen for when the player dies.
+
+Edited:
+- The "GlobalValues" Script (so that the GAME OVER canvas is displayed on players death)
+
+-----------------------------------------------------------------------------------------------------------------
